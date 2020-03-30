@@ -1,0 +1,43 @@
+﻿@using E_Ticaret_Sitesi.Models;
+@model IEnumerable<ProductModel>
+
+<div class="row">
+
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="~/Upload/@urun.Image" class="card-img-top resim-boyut" alt="@urun.Name">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@urun.Id">@urun.Name</a>
+                    </h5>
+                    <p class="card-text pt-2 description">
+                        @*@if (urun.Description.Length > 35)
+                            {
+                                @(urun.Description.Substring(0, 35) + "...")
+                                @Html.ActionLink("... tıklayınız", "Index", null, new { @class = "btn btn-primary mt-2", style = "color:yellow;" })
+                            }
+                            else
+                            {
+                                @urun.Description
+                            } yada aşağıdaki gibi çağırmamız için control kısmında yeni bir model oluşturup linq ile description boyutunu ayarlarız*@                       
+                        @urun.Description
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted product-price">
+                        <i class="fas fa-lira-sign"></i>
+                        @urun.Price TL
+                    </small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-primary btn-sm float-right">
+                        <i class="fas fa-angle-double-right"></i>
+                        Ürünü incele
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

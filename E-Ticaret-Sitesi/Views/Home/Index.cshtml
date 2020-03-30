@@ -1,0 +1,28 @@
+﻿@using E_Ticaret_Sitesi.Models;
+@model IEnumerable<ProductModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="jumbotron" style="color: white">
+    <div class="container">
+        <h1 class="display-4">Merhaba, Alışveriş tutkunları!</h1>
+        <p class="lead">
+            Sizleri sitemizde ülkenin en kaliteli ürünleri bekliyor
+        </p>
+        <hr class="my-4">
+        <p>
+            Kameralar, bilgisayarlar, elektronik eşyalar, telefonlar, beyaz eşyalar, Müzik aletleri, Mobilyalar gibi birbirinden farklı ürünler sitemizde mevcuttur. 
+            Keyifli alışverişler hepinize :D
+        </p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Daha fazlası...</a>
+    </div>
+</div>
+
+<div class="container py-5">
+    @Html.Partial("_ProductList", Model)
+</div>
+
+
